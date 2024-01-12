@@ -1,13 +1,423 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Agbalumo&family=Karla&family=Montserrat&family=Raleway:ital,wght@0,400;1,300&family=Salsa&family=Source+Code+Pro:wght@200;300&display=swap");
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  font-family: "Karla", sans-serif;
+}
+/* Header.css */
+
+.header-container {
+  backdrop-filter: blur(10px);
+  height: 40px;
+  background-color: #80bcbd;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  border-bottom: 1px solid rgba(219, 224, 224, 0.2);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.header-title {
+  margin: 0;
+  padding-left: 35px;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.header-icons {
+  display: flex;
+}
+
+.header-icon {
+  font-size: 20px;
+  margin-left: 10px;
+  color: #505457;
+}
+
+/* Add any other styles as needed for your header */
+
+/* Sidebar.css */
+
+.sidebar-container {
+  backdrop-filter: blur(10px);
+  background-color: #80bcbd;
+  height: 100vh;
+  width: 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.sidebar-header {
+  margin-bottom: 10px;
+  margin-top: -8px;
+}
+
+.sidebar-logo {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.sidebar-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-links a {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  position: relative;
+  transition: background-color 0.3s ease, border-radius 0.3s ease;
+}
+
+.sidebar-links a:hover {
+  background-color: #ddd;
+  border-radius: 8px;
+}
+
+.submenu {
+  width: 130px;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+  font-size: 12px;
+  padding-top: 10px;
+}
+
+.has-submenu:hover .submenu1 {
+  display: block;
+  top: 60px;
+  left: 29px;
+  transform: translateX(10px);
+}
+.has-submenu:hover .submenu2 {
+  display: block;
+  top: 95px;
+  left: 29px;
+  transform: translateX(10px);
+}
+.has-submenu:hover .submenu3 {
+  display: block;
+  top: 130px;
+  left: 29px;
+  transform: translateX(10px);
+}
+.has-submenu:hover .submenu4 {
+  display: block;
+  top: 165px;
+  left: 29px;
+  transform: translateX(10px);
+}
+
+.main-container {
+  padding-left: 50px;
+  margin-top: 7px;
+  margin-right: 13px;
+}
+
+/* dashboard css */
+.dashboard-header {
+  text-align: center;
+}
+
+.dashboard-body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.food-item {
+  font-size: 12px;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 5px;
+  margin: 10px;
+  width: 100px;
+  height: 100%;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-radius 0.3s ease;
+}
+.food-item:hover {
+  background-color: #80bcbd;
+}
+.table-container {
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0px 10px;
+}
+
+button:hover {
+  color: #80bcbd;
+}
+
+input {
+  width: 100px;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #80bcbd;
+}
+
+.brand-name {
+  color: #333;
+}
+
+.delete-button {
+  background-color: #e74c3c;
+  color: #fff;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #c0392b;
+}
+
+
+/* update food item */
+
+/* UpdateFoodItem.css */
+
+.update-food-item-container {
+  max-width: 600px;
+  margin: auto;
+  padding-bottom: 100px;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+.food-items-list {
+  margin-top: 20px;
+}
+
+.update-food-item-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.update-food-item-container li {
+  cursor: pointer;
+  padding: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 5px;
+  border-radius: 4px;
+}
+
+.update-food-item-container li:hover {
+  background-color: #f0f0f0;
+}
+
+.update-form {
+  margin-top: 20px;
+}
+
+.update-food-item-container label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.update-food-item-container input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+}
+
+.update-food-item-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.update-food-item-container button {
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 8px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+}
+
+.update-food-item-container button:hover {
+  background-color: #45a049;
+}
+
+
+/* add food item */
+.add-food-item-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.add-food-item-container h2 {
+  text-align: center;
+  color: #333;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-food-item-container label {
+  margin-bottom: 10px;
+}
+
+.add-food-item-container input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  box-sizing: border-box;
+}
+
+.varieties-section {
+  margin-top: 15px;
+}
+
+.add-food-item-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.add-food-item-container li {
+  margin-bottom: 5px;
+}
+
+.new-variety-section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.add-food-item-container button {
+  margin-top: 10px;
+  padding: 8px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-food-item-container button:hover {
+  background-color: #45a049;
+}
+
+/* notification */
+
+.notification {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  max-width: 300px;
+  padding: 15px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.notification.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.notification.hidden {
+  display: none;
+}
+
+.notification.success {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.notification.error {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.notification button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
 }

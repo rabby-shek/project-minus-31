@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Dashboard from "./pages/dashboard/Dashboard";
+import NotFoundPage from "./pages/notfound/NotFoundPage";
+import Header from "./components/header/Header";
+import Sidebar from "./components/sidebar/Sidebar";
+import AllFoodItem from "./pages/allfooditem/AllFoodItem";
+import AddFoodItem from "./pages/addfooditem/AddFoodItem";
+import UpdateFoodItem from "./pages/updatefooditem/UpdateFoodItem";
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Header />
+        <Sidebar />
+       <div className="main-container">
+       <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="*" element={<NotFoundPage />} />
+          <Route path="/all-food-items" element={<AllFoodItem />} />
+          <Route path="/add-food-items" element={<AddFoodItem />} />
+          <Route path="/update-food-items" element={<UpdateFoodItem />} />
+        </Routes>
+       </div>
+      </Router>
+    </>
   );
-}
+};
 
 export default App;

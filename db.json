@@ -1,0 +1,131 @@
+{
+  "foodItems": [
+    {
+      "foodName": "Pizza",
+      "varieties": [
+        {
+          "name": "pepperoni",
+          "price": "350"
+        },
+        {
+          "name": "vegetarian",
+          "price": "250"
+        },
+        {
+          "name": "cheese",
+          "price": "500"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "id": 3,
+      "foodName": "Pasta",
+      "varieties": [
+        {
+          "name": "alfredo",
+          "price": "250"
+        },
+        {
+          "name": "bolognese",
+          "price": "170"
+        },
+        {
+          "name": "pesto",
+          "price": "245"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "foodName": "Salad",
+      "varieties": [
+        {
+          "name": "caesar",
+          "price": "210"
+        },
+        {
+          "name": "greek",
+          "price": "150"
+        },
+        {
+          "name": "caprese",
+          "price": "230"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "foodName": "Steak",
+      "varieties": [
+        {
+          "name": "medium-rare",
+          "price": "700"
+        },
+        {
+          "name": "well-done",
+          "price": "530"
+        },
+        {
+          "name": "rare",
+          "price": "630"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "foodName": "Sushi",
+      "varieties": [
+        {
+          "name": "nigiri",
+          "price": "300"
+        },
+        {
+          "name": "sashimi",
+          "price": "340"
+        },
+        {
+          "name": "maki",
+          "price": "450"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "foodName": "Chicken Curry",
+      "price": 200,
+      "varieties": [
+        {
+          "name": "spicy",
+          "price": "300"
+        },
+        {
+          "name": "mild",
+          "price": "340"
+        },
+        {
+          "name": "coconut",
+          "price": "450"
+        }
+      ]
+    },
+    {
+      "foodName": "Fajitas",
+      "varieties": [
+        {
+          "name": "chicken",
+          "price": "150"
+        },
+        {
+          "name": "beef",
+          "price": "500"
+        },
+        {
+          "name": "vegetarian",
+          "price": "200"
+        }
+      ],
+      "id": 8
+    }
+  ]
+}
