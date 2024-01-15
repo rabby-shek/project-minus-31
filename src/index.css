@@ -10,7 +10,7 @@
 .header-container {
   backdrop-filter: blur(10px);
   height: 40px;
-  background-color: #80bcbd;
+  background-color: #8BE8E5;
   color: #fff;
   padding: 15px;
   text-align: center;
@@ -44,7 +44,7 @@
 
 .sidebar-container {
   backdrop-filter: blur(10px);
-  background-color: #80bcbd;
+  background-color: #8BE8E5;
   height: 100vh;
   width: 40px;
   position: fixed;
@@ -420,4 +420,45 @@ h2 {
   cursor: pointer;
   font-size: 14px;
   margin-top: 10px;
+}
+
+/* custom loader */
+.custom-loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  display: grid;
+  border: 4px solid #0000;
+  border-radius: 50%;
+  border-color: #e4e4ed #0000;
+  animation: s6 1s infinite linear;
+}
+
+.custom-loader::before,
+.custom-loader::after {
+  content: "";
+  grid-area: 1/1;
+  border: inherit;
+  border-radius: 50%;
+}
+
+.custom-loader::before {
+  border-color: #766df4 #0000;
+  animation: s6 1s infinite linear;
+}
+
+.custom-loader::after {
+  animation: s6 1s infinite linear;
+}
+
+@keyframes s6 {
+  0% {
+    transform: rotate(0turn);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
 }

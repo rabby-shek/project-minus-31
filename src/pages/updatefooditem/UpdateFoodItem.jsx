@@ -12,14 +12,17 @@ const UpdateFoodItem = () => {
     name: '',
     price: '',
   });
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchFoodItems = async () => {
       try {
         const response = await axios.get('http://localhost:6060/foodItems');
         setFoodItems(response.data);
+        setIsLoading(false);
       } catch (error) {
         console.error('Error fetching food items:', error);
+        setIsLoading(false);
       }
     };
 
@@ -82,15 +85,16 @@ const UpdateFoodItem = () => {
   };
   return (
     <div className="update-food-item-container">
-      <h2>Update / Delete Food Item</h2>
+      <h2> Food Items</h2>
+      {isLoading && <div className="custom-loader"></div>}
       <div className="food-items-list">
-        <ul>
+        <select>
           {foodItems.map((item) => (
-            <li key={item.id} onClick={() => handleFoodItemClick(item)}>
+            <option key={item.id} onClick={() => handleFoodItemClick(item)}>
               {item.foodName}
-            </li>
+            </option>
           ))}
-        </ul>
+        </select>
       </div>
       {selectedFoodItem && (
         <div className="update-form">

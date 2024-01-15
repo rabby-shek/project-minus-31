@@ -5,7 +5,7 @@
       "varieties": [
         {
           "name": "pepperoni",
-          "price": "350"
+          "price": "200"
         },
         {
           "name": "vegetarian",
@@ -91,9 +91,7 @@
       ]
     },
     {
-      "id": 7,
       "foodName": "Chicken Curry",
-      "price": 200,
       "varieties": [
         {
           "name": "spicy",
@@ -105,9 +103,10 @@
         },
         {
           "name": "coconut",
-          "price": "450"
+          "price": "400"
         }
-      ]
+      ],
+      "id": 7
     },
     {
       "foodName": "Fajitas",
@@ -126,6 +125,78 @@
         }
       ],
       "id": 8
+    },
+    {
+      "foodName": "Tacos",
+      "varieties": [
+        {
+          "name": "beef",
+          "price": "500"
+        },
+        {
+          "name": "chicken",
+          "price": "300"
+        },
+        {
+          "name": "steak",
+          "price": "700"
+        }
+      ],
+      "id": 9
+    },
+    {
+      "foodName": "Ice Cream",
+      "varieties": [
+        {
+          "name": "vanilla",
+          "price": "100"
+        },
+        {
+          "name": "chocolate",
+          "price": "150"
+        },
+        {
+          "name": "strawberry",
+          "price": "200"
+        }
+      ],
+      "id": 10
+    },
+    {
+      "foodName": "Wings",
+      "varieties": [
+        {
+          "name": "buffalo",
+          "price": "200"
+        },
+        {
+          "name": "barbecue",
+          "price": "250"
+        },
+        {
+          "name": "teriyaki",
+          "price": "300"
+        }
+      ],
+      "id": 11
+    },
+    {
+      "foodName": "Ramen",
+      "varieties": [
+        {
+          "name": "shoyu",
+          "price": "300"
+        },
+        {
+          "name": "miso",
+          "price": "350"
+        },
+        {
+          "name": "tonkotsu",
+          "price": "400"
+        }
+      ],
+      "id": 12
     }
   ]
 }

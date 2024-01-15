@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
-
+import ReactToPrint from "react-to-print";
+import PrintableContent from "../../components/PrintableContent ";
 const Dashboard = () => {
   const [foodItems, setFoodItems] = useState([]);
   const [selectedFoods, setSelectedFoods] = useState([]);
   const [varites, setVarities] = useState({});
   const [total, setTotal] = useState(0);
   const [discount, setDiscount] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     // Fetch food items from the API
     const fetchFoodItems = async () => {
@@ -14,8 +16,10 @@ const Dashboard = () => {
         const response = await fetch("http://localhost:6060/foodItems");
         const data = await response.json();
         setFoodItems(data);
+        setIsLoading(false);
       } catch (error) {
         console.error("Error fetching food items:", error);
+        setIsLoading(false);
       }
     };
 
@@ -87,11 +91,15 @@ const Dashboard = () => {
       return updatedSelectedFoods;
     });
   };
+
+  const componentRef = useRef();
+
   return (
     <div className="dashboard-container">
       <div className="dashboard-header">
         <h2 className="brand-name">Cube 270 Degree Restaurant, Dhaka</h2>
       </div>
+      {isLoading && <div className="custom-loader"></div>}
       <div className="dashboard-body">
         {foodItems.map((item) => (
           <div
@@ -103,9 +111,9 @@ const Dashboard = () => {
           </div>
         ))}
       </div>
-
+     
       {selectedFoods.length > 0 && (
-        <div className="table-container">
+        <div className="table-container" ref={componentRef} >
           <table>
             <thead>
               <tr>
@@ -203,6 +211,16 @@ const Dashboard = () => {
               <tr>
                 <td colSpan="4">Total</td>
                 <td>{total}</td>
+              </tr>
+              <tr>
+                <td colSpan="4">Total</td>
+                <td>
+                  {" "}
+                  <ReactToPrint
+                    trigger={() => <button>Print</button>}
+                    content={() => componentRef.current}
+                  />
+                </td>
               </tr>
             </tbody>
           </table>
