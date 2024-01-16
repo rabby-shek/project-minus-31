@@ -157,7 +157,7 @@ const UpdateFoodItem = () => {
             <button onClick={handleAddVariety}>Add Variety</button>
           </label>
           <button onClick={handleUpdateFoodItem}>Update</button>
-          <button onClick={handleDeleteFoodItem}>Delete</button>
+          <button style={{backgroundColor:"red"}} onClick={handleDeleteFoodItem}>Delete</button>
         </div>
       )}
     </div>

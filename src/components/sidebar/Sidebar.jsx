@@ -48,13 +48,13 @@ const Sidebar = () => {
             </a>
             <ul className="submenu submenu3">
               <li>
-                <a href="#">Daily Profit</a>
+                <NavLink to="/daily-sale-report">Daily Sale Report</NavLink>
               </li>
               <li>
-                <a href="#">Weekly Profit</a>
+                <a href="#">Weekly Sale Report</a>
               </li>
               <li>
-                <a href="#">Monthly Profit</a>
+                <a href="#">Monthly Sale Report</a>
               </li>
             </ul>
           </li>

@@ -33,7 +33,6 @@ const Dashboard = () => {
   };
 
   useEffect(() => {
-    console.log("Selected Foods:", selectedFoods);
     if (selectedFoods.length > 0) {
       setVarities(selectedFoods[0].varieties[0].name);
     }
@@ -93,6 +92,35 @@ const Dashboard = () => {
   };
 
   const componentRef = useRef();
+  const currentDate = new Date();
+  const formatDate = currentDate.toISOString().split("T")[0];
+  console.log(formatDate);
+  const handlePostSelectedFoodDetails = async () => {
+    try {
+      const response = await fetch("http://localhost:6060/dailyFoodDetails", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          selectedFoods,
+          total,
+          discount,
+          formatDate
+        
+        }),
+      });
+  
+      if (response.ok) {
+        console.log("Selected food details posted successfully.");
+      } else {
+        console.error("Failed to post selected food details.");
+      }
+    } catch (error) {
+      console.error("Error posting selected food details:", error);
+    }
+  };
+  
 
   return (
     <div className="dashboard-container">
@@ -111,9 +139,9 @@ const Dashboard = () => {
           </div>
         ))}
       </div>
-     
+
       {selectedFoods.length > 0 && (
-        <div className="table-container" ref={componentRef} >
+        <div className="table-container" >
           <table>
             <thead>
               <tr>
@@ -219,11 +247,20 @@ const Dashboard = () => {
                   <ReactToPrint
                     trigger={() => <button>Print</button>}
                     content={() => componentRef.current}
+                    onAfterPrint={() => handlePostSelectedFoodDetails()}
                   />
                 </td>
               </tr>
             </tbody>
           </table>
+          <div ref={componentRef}>
+          <PrintableContent
+            selectedFoods={selectedFoods}
+            total={total}
+            discount={discount}
+            
+          />
+          </div>
         </div>
       )}
     </div>

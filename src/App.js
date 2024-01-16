@@ -7,6 +7,7 @@ import Sidebar from "./components/sidebar/Sidebar";
 import AllFoodItem from "./pages/allfooditem/AllFoodItem";
 import AddFoodItem from "./pages/addfooditem/AddFoodItem";
 import UpdateFoodItem from "./pages/updatefooditem/UpdateFoodItem";
+import DailySaleReport from "./pages/dailysalereport/DailySaleReport";
 
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/all-food-items" element={<AllFoodItem />} />
           <Route path="/add-food-items" element={<AddFoodItem />} />
           <Route path="/update-food-items" element={<UpdateFoodItem />} />
+          <Route path="/daily-sale-report" element={<DailySaleReport />} />
         </Routes>
        </div>
       </Router>
