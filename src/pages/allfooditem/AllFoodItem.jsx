@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import useTitle from "../../hooks/useTitle";
 
 const AllFoodItem = () => {
+  useTitle("All Food Items");
   const [foodItems, setFoodItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [editableItem, setEditableItem] = useState(null);
@@ -87,15 +89,20 @@ const AllFoodItem = () => {
   const updateDataOnServer = async (updatedFoodItem) => {
     console.log("Updated Food Item:", updatedFoodItem);
     try {
-      const response = await axios.put(`http://localhost:6060/foodItems/${updatedFoodItem.id}`, updatedFoodItem);
+      const response = await axios.put(
+        `http://localhost:6060/foodItems/${updatedFoodItem.id}`,
+        updatedFoodItem
+      );
 
       if (response.status === 200) {
-        console.log(`Data for food item with ID ${updatedFoodItem.id} updated successfully on the server`);
+        console.log(
+          `Data for food item with ID ${updatedFoodItem.id} updated successfully on the server`
+        );
       } else {
-        console.error('Failed to update data on the server');
+        console.error("Failed to update data on the server");
       }
     } catch (error) {
-      console.error('Error updating data on the server:', error);
+      console.error("Error updating data on the server:", error);
     }
   };
 
@@ -115,13 +122,11 @@ const AllFoodItem = () => {
               {/* Add more table headers based on your data structure */}
             </tr>
           </thead>
-          <tbody >
+          <tbody>
             {foodItems.map((foodItem) => (
               <tr key={foodItem.id} onBlur={() => handleBlur(foodItem)}>
                 <td>{id++}</td>
-                <td
-                  onDoubleClick={() => handleDoubleClick(foodItem)}
-                >
+                <td onDoubleClick={() => handleDoubleClick(foodItem)}>
                   {editableItem === foodItem.id ? (
                     <input
                       type="text"
@@ -139,9 +144,7 @@ const AllFoodItem = () => {
                     }}
                   >
                     {foodItem.varieties.map((variety) => (
-                      <li
-                      onDoubleClick={() => handleDoubleClick(foodItem)}
-                      >
+                      <li onDoubleClick={() => handleDoubleClick(foodItem)}>
                         {editableItem === foodItem.id ? (
                           <div>
                             <input

@@ -1,27 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import useTitle from "../../hooks/useTitle";
 
 const UpdateFoodItem = () => {
+  useTitle("Update Food Details")
   const [foodItems, setFoodItems] = useState([]);
   const [selectedFoodItem, setSelectedFoodItem] = useState(null);
   const [updatedFoodItem, setUpdatedFoodItem] = useState({
-    foodName: '',
+    foodName: "",
     varieties: [],
   });
   const [newVariety, setNewVariety] = useState({
-    name: '',
-    price: '',
+    name: "",
+    price: "",
   });
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchFoodItems = async () => {
       try {
-        const response = await axios.get('http://localhost:6060/foodItems');
+        const response = await axios.get("http://localhost:6060/foodItems");
         setFoodItems(response.data);
         setIsLoading(false);
       } catch (error) {
-        console.error('Error fetching food items:', error);
+        console.error("Error fetching food items:", error);
         setIsLoading(false);
       }
     };
@@ -40,32 +42,37 @@ const UpdateFoodItem = () => {
   const handleUpdateFoodItem = async () => {
     try {
       if (selectedFoodItem) {
-        await axios.put(`http://localhost:6060/foodItems/${selectedFoodItem.id}`, updatedFoodItem);
+        await axios.put(
+          `http://localhost:6060/foodItems/${selectedFoodItem.id}`,
+          updatedFoodItem
+        );
 
-        const response = await axios.get('http://localhost:6060/foodItems');
+        const response = await axios.get("http://localhost:6060/foodItems");
         setFoodItems(response.data);
 
         setSelectedFoodItem(null);
-        setUpdatedFoodItem({ foodName: '', varieties: [] });
+        setUpdatedFoodItem({ foodName: "", varieties: [] });
       }
     } catch (error) {
-      console.error('Error updating food item:', error);
+      console.error("Error updating food item:", error);
     }
   };
 
   const handleDeleteFoodItem = async () => {
     try {
       if (selectedFoodItem) {
-        await axios.delete(`http://localhost:6060/foodItems/${selectedFoodItem.id}`);
+        await axios.delete(
+          `http://localhost:6060/foodItems/${selectedFoodItem.id}`
+        );
 
-        const response = await axios.get('http://localhost:6060/foodItems');
+        const response = await axios.get("http://localhost:6060/foodItems");
         setFoodItems(response.data);
 
         setSelectedFoodItem(null);
-        setUpdatedFoodItem({ foodName: '', varieties: [] });
+        setUpdatedFoodItem({ foodName: "", varieties: [] });
       }
     } catch (error) {
-      console.error('Error deleting food item:', error);
+      console.error("Error deleting food item:", error);
     }
   };
 
@@ -74,7 +81,7 @@ const UpdateFoodItem = () => {
       ...prevFoodItem,
       varieties: [...prevFoodItem.varieties, { ...newVariety }],
     }));
-    setNewVariety({ name: '', price: '' });
+    setNewVariety({ name: "", price: "" });
   };
   const handleDeleteVariety = (index) => {
     setUpdatedFoodItem((prevFoodItem) => {
@@ -103,7 +110,12 @@ const UpdateFoodItem = () => {
             <input
               type="text"
               value={updatedFoodItem.foodName}
-              onChange={(e) => setUpdatedFoodItem({ ...updatedFoodItem, foodName: e.target.value })}
+              onChange={(e) =>
+                setUpdatedFoodItem({
+                  ...updatedFoodItem,
+                  foodName: e.target.value,
+                })
+              }
             />
           </label>
           <label>
@@ -119,7 +131,10 @@ const UpdateFoodItem = () => {
                       onChange={(e) => {
                         const updatedVarieties = [...updatedFoodItem.varieties];
                         updatedVarieties[index].name = e.target.value;
-                        setUpdatedFoodItem({ ...updatedFoodItem, varieties: updatedVarieties });
+                        setUpdatedFoodItem({
+                          ...updatedFoodItem,
+                          varieties: updatedVarieties,
+                        });
                       }}
                     />
                   </label>
@@ -131,11 +146,16 @@ const UpdateFoodItem = () => {
                       onChange={(e) => {
                         const updatedVarieties = [...updatedFoodItem.varieties];
                         updatedVarieties[index].price = e.target.value;
-                        setUpdatedFoodItem({ ...updatedFoodItem, varieties: updatedVarieties });
+                        setUpdatedFoodItem({
+                          ...updatedFoodItem,
+                          varieties: updatedVarieties,
+                        });
                       }}
                     />
                   </label>
-                  <button onClick={() => handleDeleteVariety(index)}>Delete Variety</button>
+                  <button onClick={() => handleDeleteVariety(index)}>
+                    Delete Variety
+                  </button>
                 </li>
               ))}
             </ul>
@@ -145,19 +165,28 @@ const UpdateFoodItem = () => {
             <input
               type="text"
               value={newVariety.name}
-              onChange={(e) => setNewVariety({ ...newVariety, name: e.target.value })}
+              onChange={(e) =>
+                setNewVariety({ ...newVariety, name: e.target.value })
+              }
               placeholder="Variety Name"
             />
             <input
               type="text"
               value={newVariety.price}
-              onChange={(e) => setNewVariety({ ...newVariety, price: e.target.value })}
+              onChange={(e) =>
+                setNewVariety({ ...newVariety, price: e.target.value })
+              }
               placeholder="Variety Price"
             />
             <button onClick={handleAddVariety}>Add Variety</button>
           </label>
           <button onClick={handleUpdateFoodItem}>Update</button>
-          <button style={{backgroundColor:"red"}} onClick={handleDeleteFoodItem}>Delete</button>
+          <button
+            style={{ backgroundColor: "red" }}
+            onClick={handleDeleteFoodItem}
+          >
+            Delete
+          </button>
         </div>
       )}
     </div>

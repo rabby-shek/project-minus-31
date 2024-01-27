@@ -2,7 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import ReactToPrint from "react-to-print";
 import PrintableContent from "../../components/PrintableContent ";
+import useTitle from "../../hooks/useTitle";
 const Dashboard = () => {
+  useTitle("Dashbord");
   const [foodItems, setFoodItems] = useState([]);
   const [selectedFoods, setSelectedFoods] = useState([]);
   const [varites, setVarities] = useState({});
@@ -106,11 +108,10 @@ const Dashboard = () => {
           selectedFoods,
           total,
           discount,
-          formatDate
-        
+          formatDate,
         }),
       });
-  
+
       if (response.ok) {
         console.log("Selected food details posted successfully.");
       } else {
@@ -120,7 +121,6 @@ const Dashboard = () => {
       console.error("Error posting selected food details:", error);
     }
   };
-  
 
   return (
     <div className="dashboard-container">
@@ -141,7 +141,7 @@ const Dashboard = () => {
       </div>
 
       {selectedFoods.length > 0 && (
-        <div className="table-container" >
+        <div className="table-container">
           <table>
             <thead>
               <tr>
@@ -254,12 +254,11 @@ const Dashboard = () => {
             </tbody>
           </table>
           <div ref={componentRef}>
-          <PrintableContent
-            selectedFoods={selectedFoods}
-            total={total}
-            discount={discount}
-            
-          />
+            <PrintableContent
+              selectedFoods={selectedFoods}
+              total={total}
+              discount={discount}
+            />
           </div>
         </div>
       )}

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Notification from "../../components/Notification";
+import useTitle from "../../hooks/useTitle";
 const AddFoodItem = () => {
+  useTitle("Add New Food Item")
   const [foodName, setFoodName] = useState("");
   const [varieties, setVarieties] = useState([]);
   const [newVariety, setNewVariety] = useState({ name: "", price: "" });
