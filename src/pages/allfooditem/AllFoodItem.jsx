@@ -110,7 +110,7 @@ const AllFoodItem = () => {
 
   return (
     <div style={{ marginBottom: "100px" }}>
-      <h2>All Food Items</h2>
+      <div className="app-header-title">All Food Items</div>
       {isLoading && <div className="custom-loader"></div>}
       {foodItems.length > 0 && (
         <table>

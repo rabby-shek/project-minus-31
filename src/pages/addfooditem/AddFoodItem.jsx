@@ -46,7 +46,7 @@ const AddFoodItem = () => {
   };
   return (
     <div className="add-food-item-container">
-      <h2>Add Food Item</h2>
+      <div className="app-header-title">Add Food Item</div>
       {notification.message && (
         <Notification
           message={notification.message}

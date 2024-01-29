@@ -3,6 +3,8 @@ import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import ReactToPrint from "react-to-print";
 import PrintableContent from "../../components/PrintableContent ";
 import useTitle from "../../hooks/useTitle";
+import fetchFoodItems from "./fetchFoodItems";
+import calculatetotal from "./calculatetotal";
 const Dashboard = () => {
   useTitle("Dashbord");
   const [foodItems, setFoodItems] = useState([]);
@@ -11,21 +13,10 @@ const Dashboard = () => {
   const [total, setTotal] = useState(0);
   const [discount, setDiscount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {
-    // Fetch food items from the API
-    const fetchFoodItems = async () => {
-      try {
-        const response = await fetch("http://localhost:6060/foodItems");
-        const data = await response.json();
-        setFoodItems(data);
-        setIsLoading(false);
-      } catch (error) {
-        console.error("Error fetching food items:", error);
-        setIsLoading(false);
-      }
-    };
 
-    fetchFoodItems();
+  // fething food items list
+  useEffect(() => {
+    fetchFoodItems(setFoodItems, setIsLoading);
   }, []);
   const handleFoodItemClick = (foodItem) => {
     setSelectedFoods((prevSelectedFoods) => [
@@ -42,17 +33,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     // Calculate the total based on selectedFoods and apply the discount
-    const subtotal = selectedFoods.reduce((acc, food) => {
-      const variety = food.varieties.find(
-        (v) => v.name === food.selectedVariety
-      );
-      return acc + (variety ? variety.price * food.quantity : 0);
-    }, 0);
-
-    const discountedTotal = subtotal - discount;
-    const finalTotal = discountedTotal < 0 ? 0 : discountedTotal;
-
-    setTotal(finalTotal);
+    calculatetotal(selectedFoods, discount, setTotal);
   }, [selectedFoods, discount]);
 
   const handleVaritesChange = (e, foodIndex) => {
@@ -124,9 +105,9 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-container">
-      <div className="dashboard-header">
+      {/* <div className="dashboard-header">
         <h2 className="brand-name">Cube 270 Degree Restaurant, Dhaka</h2>
-      </div>
+      </div> */}
       {isLoading && <div className="custom-loader"></div>}
       <div className="dashboard-body">
         {foodItems.map((item) => (

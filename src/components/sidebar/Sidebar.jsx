@@ -67,7 +67,7 @@ const Sidebar = () => {
                 <a href="#">UI Settings</a>
               </li>
               <li>
-                <a href="#">Print Settings</a>
+                <NavLink to="/print-settings">Print Settings</NavLink>
               </li>
             </ul>
           </li>

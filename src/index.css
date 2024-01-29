@@ -5,12 +5,18 @@
   box-sizing: border-box;
   font-family: "Karla", sans-serif;
 }
+
+/* root deisgn */
+:root {
+  --title-font-size: 20px;
+  --title-font-weigth: 700;
+}
 /* Header.css */
 
 .header-container {
   backdrop-filter: blur(10px);
   height: 40px;
-  background-color: #8BE8E5;
+  background-color: #8be8e5;
   color: #fff;
   padding: 15px;
   text-align: center;
@@ -44,7 +50,7 @@
 
 .sidebar-container {
   backdrop-filter: blur(10px);
-  background-color: #8BE8E5;
+  background-color: #8be8e5;
   height: 100vh;
   width: 40px;
   position: fixed;
@@ -238,7 +244,6 @@ input:focus {
   background-color: #c0392b;
 }
 
-
 /* update food item */
 
 /* UpdateFoodItem.css */
@@ -306,13 +311,11 @@ h2 {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-
 }
 
 .update-food-item-container button:hover {
   background-color: #45a049;
 }
-
 
 /* add food item */
 .add-food-item-container {
@@ -463,7 +466,6 @@ h2 {
   }
 }
 
-
 /* print */
 .printable-container {
   display: flex;
@@ -489,7 +491,7 @@ h2 {
   margin-bottom: 10px;
 }
 
-.print-food-item{
+.print-food-item {
   list-style-type: none;
   padding: 0;
 }
@@ -523,12 +525,15 @@ h2 {
   color: #007bff;
 }
 
-
 /* daily sale report */
 
-.daily-sale-report-container{
- margin-bottom: 100px;
+.daily-sale-report-container {
+  margin-bottom: 100px;
 }
-.daily-sale-report-header{
+.daily-sale-report-header {
   text-align: center;
 }
+
+/* Print settings styles start here */
+
+/* Print settings styles end here */

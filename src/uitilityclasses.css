@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Agbalumo&family=Karla&family=Montserrat&family=Raleway:ital,wght@0,400;1,300&family=Salsa&family=Source+Code+Pro:wght@200;300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* root styles */
+:root {
+  --title-font-size: 20px;
+  --title-font-weigth: 700;
+}
+/* app page header styles */
+.app-header-title {
+  font-size: var(--title-font-size);
+  font-weight: var(--title-font-weigth);
+  text-align: center;
+}
+/* app form styles*/
+.app-form-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.app-form-group {
+  display: flex;
+  margin-top: 10px;
+}
+.app-form-label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+.app-form-group input {
+  width: 300px;
+}
+.app-form-group textarea {
+  width: 300px;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.app-form-group textarea:focus {
+  outline: none;
+  border-color: #80bcbd;
+}
+.app-submit-button .success{
+    background-color: rgb(125, 226, 125);
+}

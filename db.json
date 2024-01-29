@@ -197,6 +197,12 @@
         }
       ],
       "id": 12
+    },
+    {
+      "name": "Arabian Resturan ",
+      "phone": "01724707680",
+      "address": "Matauil, jatrabari, Dhaka 1264",
+      "id": 13
     }
   ],
   "dailyFoodDetails": [
@@ -1211,6 +1217,572 @@
       "discount": 0,
       "formatDate": "2024-01-17",
       "id": 9
+    },
+    {
+      "selectedFoods": [
+        {
+          "id": 4,
+          "foodName": "Salad",
+          "varieties": [
+            {
+              "name": "caesar",
+              "price": "210"
+            },
+            {
+              "name": "greek",
+              "price": "150"
+            },
+            {
+              "name": "caprese",
+              "price": "230"
+            }
+          ],
+          "selectedVariety": "caesar",
+          "quantity": 1
+        },
+        {
+          "id": 5,
+          "foodName": "Steak",
+          "varieties": [
+            {
+              "name": "medium-rare",
+              "price": "700"
+            },
+            {
+              "name": "well-done",
+              "price": "530"
+            },
+            {
+              "name": "rare",
+              "price": "630"
+            }
+          ],
+          "selectedVariety": "medium-rare",
+          "quantity": 1
+        }
+      ],
+      "total": 910,
+      "discount": 0,
+      "formatDate": "2024-01-27",
+      "id": 10
+    },
+    {
+      "selectedFoods": [
+        {
+          "foodName": "Ramen",
+          "varieties": [
+            {
+              "name": "shoyu",
+              "price": "300"
+            },
+            {
+              "name": "miso",
+              "price": "350"
+            },
+            {
+              "name": "tonkotsu",
+              "price": "400"
+            }
+          ],
+          "id": 12,
+          "selectedVariety": "shoyu",
+          "quantity": 1
+        },
+        {
+          "foodName": "Chicken Curry",
+          "varieties": [
+            {
+              "name": "spicy",
+              "price": "300"
+            },
+            {
+              "name": "mild",
+              "price": "340"
+            },
+            {
+              "name": "coconut",
+              "price": "400"
+            }
+          ],
+          "id": 7,
+          "selectedVariety": "spicy",
+          "quantity": 1
+        },
+        {
+          "foodName": "Fajitas",
+          "varieties": [
+            {
+              "name": "chicken",
+              "price": "150"
+            },
+            {
+              "name": "beef",
+              "price": "500"
+            },
+            {
+              "name": "vegetarian",
+              "price": "200"
+            }
+          ],
+          "id": 8,
+          "selectedVariety": "chicken",
+          "quantity": 1
+        },
+        {
+          "foodName": "Tacos",
+          "varieties": [
+            {
+              "name": "beef",
+              "price": "500"
+            },
+            {
+              "name": "chicken",
+              "price": "300"
+            },
+            {
+              "name": "steak",
+              "price": "700"
+            }
+          ],
+          "id": 9,
+          "selectedVariety": "beef",
+          "quantity": 1
+        }
+      ],
+      "total": 1250,
+      "discount": 0,
+      "formatDate": "2024-01-27",
+      "id": 11
+    },
+    {
+      "selectedFoods": [
+        {
+          "foodName": "Chicken Curry",
+          "varieties": [
+            {
+              "name": "spicy",
+              "price": "300"
+            },
+            {
+              "name": "mild",
+              "price": "340"
+            },
+            {
+              "name": "coconut",
+              "price": "400"
+            }
+          ],
+          "id": 7,
+          "selectedVariety": "spicy",
+          "quantity": 1
+        },
+        {
+          "id": 6,
+          "foodName": "Sushi",
+          "varieties": [
+            {
+              "name": "nigiri",
+              "price": "300"
+            },
+            {
+              "name": "sashimi",
+              "price": "340"
+            },
+            {
+              "name": "maki",
+              "price": "450"
+            }
+          ],
+          "selectedVariety": "nigiri",
+          "quantity": 1
+        },
+        {
+          "id": 5,
+          "foodName": "Steak",
+          "varieties": [
+            {
+              "name": "medium-rare",
+              "price": "700"
+            },
+            {
+              "name": "well-done",
+              "price": "530"
+            },
+            {
+              "name": "rare",
+              "price": "630"
+            }
+          ],
+          "selectedVariety": "medium-rare",
+          "quantity": 2
+        },
+        {
+          "id": 4,
+          "foodName": "Salad",
+          "varieties": [
+            {
+              "name": "caesar",
+              "price": "210"
+            },
+            {
+              "name": "greek",
+              "price": "150"
+            },
+            {
+              "name": "caprese",
+              "price": "230"
+            }
+          ],
+          "selectedVariety": "caesar",
+          "quantity": 1
+        }
+      ],
+      "total": 2210,
+      "discount": 0,
+      "formatDate": "2024-01-27",
+      "id": 12
+    },
+    {
+      "selectedFoods": [
+        {
+          "foodName": "Ramen",
+          "varieties": [
+            {
+              "name": "shoyu",
+              "price": "300"
+            },
+            {
+              "name": "miso",
+              "price": "350"
+            },
+            {
+              "name": "tonkotsu",
+              "price": "400"
+            }
+          ],
+          "id": 12,
+          "selectedVariety": "shoyu",
+          "quantity": 1
+        },
+        {
+          "foodName": "Chicken Curry",
+          "varieties": [
+            {
+              "name": "spicy",
+              "price": "300"
+            },
+            {
+              "name": "mild",
+              "price": "340"
+            },
+            {
+              "name": "coconut",
+              "price": "400"
+            }
+          ],
+          "id": 7,
+          "selectedVariety": "spicy",
+          "quantity": 1
+        },
+        {
+          "foodName": "Fajitas",
+          "varieties": [
+            {
+              "name": "chicken",
+              "price": "150"
+            },
+            {
+              "name": "beef",
+              "price": "500"
+            },
+            {
+              "name": "vegetarian",
+              "price": "200"
+            }
+          ],
+          "id": 8,
+          "selectedVariety": "chicken",
+          "quantity": 1
+        }
+      ],
+      "total": 750,
+      "discount": 0,
+      "formatDate": "2024-01-27",
+      "id": 13
+    },
+    {
+      "selectedFoods": [
+        {
+          "foodName": "Ramen",
+          "varieties": [
+            {
+              "name": "shoyu",
+              "price": "300"
+            },
+            {
+              "name": "miso",
+              "price": "350"
+            },
+            {
+              "name": "tonkotsu",
+              "price": "400"
+            }
+          ],
+          "id": 12,
+          "selectedVariety": "shoyu",
+          "quantity": 1
+        },
+        {
+          "foodName": "Chicken Curry",
+          "varieties": [
+            {
+              "name": "spicy",
+              "price": "300"
+            },
+            {
+              "name": "mild",
+              "price": "340"
+            },
+            {
+              "name": "coconut",
+              "price": "400"
+            }
+          ],
+          "id": 7,
+          "selectedVariety": "spicy",
+          "quantity": 1
+        },
+        {
+          "foodName": "Fajitas",
+          "varieties": [
+            {
+              "name": "chicken",
+              "price": "150"
+            },
+            {
+              "name": "beef",
+              "price": "500"
+            },
+            {
+              "name": "vegetarian",
+              "price": "200"
+            }
+          ],
+          "id": 8,
+          "selectedVariety": "chicken",
+          "quantity": 1
+        }
+      ],
+      "total": 750,
+      "discount": 0,
+      "formatDate": "2024-01-27",
+      "id": 14
+    },
+    {
+      "id": 15
+    },
+    {
+      "id": 16
+    },
+    {
+      "id": 17
+    },
+    {
+      "id": 18
+    },
+    {
+      "id": 19
+    },
+    {
+      "id": 20
+    },
+    {
+      "id": 21
+    },
+    {
+      "id": 22
+    },
+    {
+      "id": 23
+    },
+    {
+      "id": 24
+    },
+    {
+      "id": 25
+    },
+    {
+      "id": 26
+    },
+    {
+      "selectedFoods": [],
+      "id": 27
+    },
+    {
+      "selectedFoods": [],
+      "id": 28
+    },
+    {
+      "selectedFoods": [],
+      "id": 29
+    },
+    {
+      "selectedFoods": [],
+      "id": 30
+    },
+    {
+      "selectedFoods": [],
+      "id": 31
+    },
+    {
+      "selectedFoods": [],
+      "id": 32
+    },
+    {
+      "selectedFoods": [],
+      "total": 0,
+      "id": 33
+    },
+    {
+      "selectedFoods": [],
+      "total": 0,
+      "id": 34
+    },
+    {
+      "selectedFoods": [],
+      "total": 0,
+      "id": 35
+    },
+    {
+      "selectedFoods": [],
+      "total": 0,
+      "id": 36
+    },
+    {
+      "selectedFoods": [],
+      "total": 0,
+      "id": 37
+    },
+    {
+      "selectedFoods": [],
+      "total": 0,
+      "id": 38
+    },
+    {
+      "selectedFoods": [
+        {
+          "foodName": "Fajitas",
+          "varieties": [
+            {
+              "name": "chicken",
+              "price": "150"
+            },
+            {
+              "name": "beef",
+              "price": "500"
+            },
+            {
+              "name": "vegetarian",
+              "price": "200"
+            }
+          ],
+          "id": 8,
+          "selectedVariety": "chicken",
+          "quantity": 1
+        },
+        {
+          "foodName": "Chicken Curry",
+          "varieties": [
+            {
+              "name": "spicy",
+              "price": "300"
+            },
+            {
+              "name": "mild",
+              "price": "340"
+            },
+            {
+              "name": "coconut",
+              "price": "400"
+            }
+          ],
+          "id": 7,
+          "selectedVariety": "spicy",
+          "quantity": 1
+        },
+        {
+          "id": 5,
+          "foodName": "Steak",
+          "varieties": [
+            {
+              "name": "medium-rare",
+              "price": "700"
+            },
+            {
+              "name": "well-done",
+              "price": "530"
+            },
+            {
+              "name": "rare",
+              "price": "630"
+            }
+          ],
+          "selectedVariety": "medium-rare",
+          "quantity": 1
+        },
+        {
+          "id": 6,
+          "foodName": "Sushi",
+          "varieties": [
+            {
+              "name": "nigiri",
+              "price": "300"
+            },
+            {
+              "name": "sashimi",
+              "price": "340"
+            },
+            {
+              "name": "maki",
+              "price": "450"
+            }
+          ],
+          "selectedVariety": "nigiri",
+          "quantity": 1
+        },
+        {
+          "foodName": "Chicken Curry",
+          "varieties": [
+            {
+              "name": "spicy",
+              "price": "300"
+            },
+            {
+              "name": "mild",
+              "price": "340"
+            },
+            {
+              "name": "coconut",
+              "price": "400"
+            }
+          ],
+          "id": 7,
+          "selectedVariety": "spicy",
+          "quantity": 1
+        }
+      ],
+      "total": 1750,
+      "discount": 0,
+      "formatDate": "2024-01-29",
+      "id": 39
+    }
+  ],
+  "printDetails": [
+    {
+      "name": "dfsdfs",
+      "phone": "453534",
+      "address": "dsfsdf",
+      "id": 1
     }
   ]
 }

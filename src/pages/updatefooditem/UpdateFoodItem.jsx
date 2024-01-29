@@ -3,7 +3,7 @@ import axios from "axios";
 import useTitle from "../../hooks/useTitle";
 
 const UpdateFoodItem = () => {
-  useTitle("Update Food Details")
+  useTitle("Update Food Details");
   const [foodItems, setFoodItems] = useState([]);
   const [selectedFoodItem, setSelectedFoodItem] = useState(null);
   const [updatedFoodItem, setUpdatedFoodItem] = useState({
@@ -92,7 +92,7 @@ const UpdateFoodItem = () => {
   };
   return (
     <div className="update-food-item-container">
-      <h2> Food Items</h2>
+      <div className="app-header-title"> Food Items</div>
       {isLoading && <div className="custom-loader"></div>}
       <div className="food-items-list">
         <select>
