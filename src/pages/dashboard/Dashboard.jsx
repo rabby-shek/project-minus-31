@@ -77,7 +77,6 @@ const Dashboard = () => {
   const componentRef = useRef();
   const currentDate = new Date();
   const formatDate = currentDate.toISOString().split("T")[0];
-  console.log(formatDate);
   const handlePostSelectedFoodDetails = async () => {
     try {
       const response = await fetch("http://localhost:6060/dailyFoodDetails", {

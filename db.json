@@ -197,12 +197,6 @@
         }
       ],
       "id": 12
-    },
-    {
-      "name": "Arabian Resturan ",
-      "phone": "01724707680",
-      "address": "Matauil, jatrabari, Dhaka 1264",
-      "id": 13
     }
   ],
   "dailyFoodDetails": [
@@ -1775,6 +1769,150 @@
       "discount": 0,
       "formatDate": "2024-01-29",
       "id": 39
+    },
+    {
+      "selectedFoods": [
+        {
+          "foodName": "Ramen",
+          "varieties": [
+            {
+              "name": "shoyu",
+              "price": "300"
+            },
+            {
+              "name": "miso",
+              "price": "350"
+            },
+            {
+              "name": "tonkotsu",
+              "price": "400"
+            }
+          ],
+          "id": 12,
+          "selectedVariety": "shoyu",
+          "quantity": 1
+        },
+        {
+          "foodName": "Chicken Curry",
+          "varieties": [
+            {
+              "name": "spicy",
+              "price": "300"
+            },
+            {
+              "name": "mild",
+              "price": "340"
+            },
+            {
+              "name": "coconut",
+              "price": "400"
+            }
+          ],
+          "id": 7,
+          "selectedVariety": "spicy",
+          "quantity": 1
+        },
+        {
+          "foodName": "Fajitas",
+          "varieties": [
+            {
+              "name": "chicken",
+              "price": "150"
+            },
+            {
+              "name": "beef",
+              "price": "500"
+            },
+            {
+              "name": "vegetarian",
+              "price": "200"
+            }
+          ],
+          "id": 8,
+          "selectedVariety": "chicken",
+          "quantity": 1
+        },
+        {
+          "foodName": "Tacos",
+          "varieties": [
+            {
+              "name": "beef",
+              "price": "500"
+            },
+            {
+              "name": "chicken",
+              "price": "300"
+            },
+            {
+              "name": "steak",
+              "price": "700"
+            }
+          ],
+          "id": 9,
+          "selectedVariety": "beef",
+          "quantity": 1
+        }
+      ],
+      "total": 1250,
+      "discount": 0,
+      "formatDate": "2024-01-31",
+      "id": 40
+    },
+    {
+      "selectedFoods": [
+        {
+          "foodName": "Ramen",
+          "varieties": [
+            {
+              "name": "shoyu",
+              "price": "300"
+            },
+            {
+              "name": "miso",
+              "price": "350"
+            },
+            {
+              "name": "tonkotsu",
+              "price": "400"
+            }
+          ],
+          "id": 12,
+          "selectedVariety": "shoyu",
+          "quantity": 1
+        }
+      ],
+      "total": 300,
+      "discount": 0,
+      "formatDate": "2024-01-31",
+      "id": 41
+    },
+    {
+      "selectedFoods": [
+        {
+          "foodName": "Ramen",
+          "varieties": [
+            {
+              "name": "shoyu",
+              "price": "300"
+            },
+            {
+              "name": "miso",
+              "price": "350"
+            },
+            {
+              "name": "tonkotsu",
+              "price": "400"
+            }
+          ],
+          "id": 12,
+          "selectedVariety": "shoyu",
+          "quantity": 1
+        }
+      ],
+      "total": 300,
+      "discount": 0,
+      "formatDate": "2024-01-31",
+      "id": 42
     }
   ],
   "printDetails": [
@@ -1783,6 +1921,42 @@
       "phone": "453534",
       "address": "dsfsdf",
       "id": 1
+    },
+    {
+      "name": "kabil",
+      "phone": "3434",
+      "address": "sdsdsd",
+      "id": 2
+    },
+    {
+      "name": "asdasda",
+      "phone": "3434",
+      "address": "sdsdfsdfsd",
+      "id": 3
+    },
+    {
+      "name": "ssdfsdf",
+      "phone": "3242342",
+      "address": "wewewrwer",
+      "id": 4
+    },
+    {
+      "name": "sdfsfsd",
+      "phone": "34345",
+      "address": "sdfsdfsd",
+      "id": 5
+    },
+    {
+      "name": "asdas",
+      "phone": "34",
+      "address": "sdsf",
+      "id": 6
+    },
+    {
+      "name": "Signature Cafe and Resturant",
+      "phone": "01724707680",
+      "address": "Matuail, Konarapara, Demra, Dhaka",
+      "id": 7
     }
   ]
 }
