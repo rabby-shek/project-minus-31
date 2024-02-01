@@ -5,6 +5,7 @@ import PrintableContent from "../../components/PrintableContent ";
 import useTitle from "../../hooks/useTitle";
 import fetchFoodItems from "./fetchFoodItems";
 import calculatetotal from "./calculatetotal";
+import { RiDeleteBin6Line } from "react-icons/ri";
 const Dashboard = () => {
   useTitle("Dashbord");
   const [foodItems, setFoodItems] = useState([]);
@@ -130,7 +131,7 @@ const Dashboard = () => {
                 <th>Price</th>
                 <th>Quantity</th>
                 <th>Subtotal</th>
-                <th>Action</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -199,7 +200,7 @@ const Dashboard = () => {
                     <td>{subtotal}</td>
                     <td>
                       <button onClick={() => handleDeleteFoodItem(foodIndex)}>
-                        Delete
+                        <RiDeleteBin6Line className="delete-icon" />
                       </button>
                     </td>
                   </tr>

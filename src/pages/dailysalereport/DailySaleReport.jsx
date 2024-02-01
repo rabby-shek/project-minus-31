@@ -4,8 +4,11 @@ import useTitle from "../../hooks/useTitle";
 
 const DailySaleReport = () => {
   useTitle("Daily Sale Report");
+  const currentDate = new Date();
+  const todaysDate = currentDate.toISOString().split("T")[0];
   const [dailySaleReportData, setDailySaleReportData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [selectedSaleDate, setSelectedSaleDate] = useState(todaysDate);
 
   const fetchDailySaleReportData = async () => {
     try {
@@ -25,29 +28,40 @@ const DailySaleReport = () => {
 
   let dailySaleReport = 0;
   let dailyDiscountReport = 0;
-  const currentDate = new Date();
-  const todaysDate = currentDate.toISOString().split("T")[0];
 
   const todaysSaleData = dailySaleReportData.filter(
-    (items) => items.formatDate === todaysDate
+    (items) => items.formatDate === selectedSaleDate
   );
   console.log(todaysSaleData);
-  const groupedData = {};
-  todaysSaleData.forEach((item) => {
-    item.selectedFoods.forEach((food) => {
-      const key = `${food.foodName}_${food.selectedVariety}`;
-      if (!groupedData[key]) {
-        groupedData[key] = { ...food, totalQuantity: food.quantity };
-      } else {
-        groupedData[key].totalQuantity += food.quantity;
-      }
-    });
-  });
+  // const groupedData = {};
+  // todaysSaleData.forEach((item) => {
+  //   item.selectedFoods.forEach((food) => {
+  //     const key = `${food.foodName}_${food.selectedVariety}`;
+  //     if (!groupedData[key]) {
+  //       groupedData[key] = { ...food, totalQuantity: food.quantity };
+  //     } else {
+  //       groupedData[key].totalQuantity += food.quantity;
+  //     }
+  //   });
+  // });
 
-  const groupedItems = Object.values(groupedData);
+  // const groupedItems = Object.values(groupedData);
+  let countItem = 1;
+  // console.log(selectedSaleDate);
   return (
     <div className="daily-sale-report-container">
-      <h2 className="daily-sale-report-header">Daily Sale Report</h2>
+      <h2 className="daily-sale-report-header">Sale Report</h2>
+      <div>
+        <span>Select a Date : </span>
+        <input
+          style={{
+            width: "150px",
+          }}
+          type="date"
+          value={selectedSaleDate}
+          onChange={(e) => setSelectedSaleDate(e.target.value)}
+        />
+      </div>
       {isLoading && <div className="custom-loader"></div>}
       {todaysSaleData.length > 0 &&
       dailySaleReportData.some((item) => item.formatDate === todaysDate) ? (
@@ -56,6 +70,7 @@ const DailySaleReport = () => {
           <table>
             <thead>
               <tr>
+                <th>Order Number</th>
                 <th>Date</th>
                 <th>Sales Report</th>
               </tr>
@@ -67,6 +82,7 @@ const DailySaleReport = () => {
 
                 return (
                   <tr key={item.id}>
+                    <td>{countItem++}</td>
                     <td>{item.formatDate}</td>
                     <td>
                       {item.selectedFoods.map((food) => (
@@ -84,7 +100,7 @@ const DailySaleReport = () => {
                             {food.varieties
                               ? food.varieties.find(
                                   (v) => v.name === food.selectedVariety
-                                ).price
+                                ).price * food.quantity
                               : ""}{" "}
                             TK
                           </span>
@@ -98,10 +114,12 @@ const DailySaleReport = () => {
                 );
               })}
               <tr>
+                <td></td>
                 <td>Given Discount :</td>
                 <td>{dailyDiscountReport} TK</td>
               </tr>
               <tr>
+                <td></td>
                 <td>Daily Total Sale :</td>
                 <td>{dailySaleReport} TK</td>
               </tr>
@@ -114,7 +132,7 @@ const DailySaleReport = () => {
         </div>
       )}
 
-      <table>
+      {/* <table>
         <thead>
           <th>Food Item</th>
           <th>Variety</th>
@@ -148,7 +166,7 @@ const DailySaleReport = () => {
             Total :
           </td>
           <td>
-            {/* Calculate and display total here */}
+         
             {groupedItems.reduce(
               (total, food) =>
                 ((food.varieties &&
@@ -162,7 +180,34 @@ const DailySaleReport = () => {
             TK
           </td>
         </tr>
-      </table>
+      </table> */}
+      {dailySaleReportData.length > 0 && (
+        <>
+          <h2 className="daily-sale-report-header">Total Items Soled</h2>
+          <table>
+            <thead>
+              <th>Food Item</th>
+              <th>Variety</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Subtotal</th>
+            </thead>
+            <tbody>
+              {todaysSaleData.map((item) => {
+                return (
+                  <tr>
+                    <td>
+                      {item.selectedFoods.map((food) => {
+                        return <p>{food.foodName}</p>;
+                      })}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </>
+      )}
     </div>
   );
 };

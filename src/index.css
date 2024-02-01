@@ -532,6 +532,7 @@ h2 {
 }
 .daily-sale-report-header {
   text-align: center;
+  margin-top: 20px;
 }
 
 /* Print settings styles start here */
@@ -549,3 +550,11 @@ h2 {
   background-color: rgb(54, 52, 52);
 }
 /* Print settings styles end here */
+
+.delete-icon{
+  color: red;
+  transition: 0.3s ease;
+}
+.delete-icon:hover{
+  rotate: 25deg;
+}
