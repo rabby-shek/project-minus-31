@@ -64,7 +64,7 @@ const DailySaleReport = () => {
       </div>
       {isLoading && <div className="custom-loader"></div>}
       {todaysSaleData.length > 0 &&
-      dailySaleReportData.some((item) => item.formatDate === todaysDate) ? (
+      dailySaleReportData.some((item) => item.formatDate === selectedSaleDate) ? (
         <div>
           <DailySaleReportChart />
           <table>

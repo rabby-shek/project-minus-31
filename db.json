@@ -2097,6 +2097,134 @@
       "discount": 0,
       "formatDate": "2024-02-01",
       "id": 45
+    },
+    {
+      "selectedFoods": [
+        {
+          "foodName": "Ramen",
+          "varieties": [
+            {
+              "name": "shoyu",
+              "price": "300"
+            },
+            {
+              "name": "miso",
+              "price": "350"
+            },
+            {
+              "name": "tonkotsu",
+              "price": "400"
+            }
+          ],
+          "id": 12,
+          "selectedVariety": "shoyu",
+          "quantity": 1
+        },
+        {
+          "foodName": "Chicken Curry",
+          "varieties": [
+            {
+              "name": "spicy",
+              "price": "300"
+            },
+            {
+              "name": "mild",
+              "price": "340"
+            },
+            {
+              "name": "coconut",
+              "price": "400"
+            }
+          ],
+          "id": 7,
+          "selectedVariety": "spicy",
+          "quantity": 1
+        },
+        {
+          "id": 6,
+          "foodName": "Sushi",
+          "varieties": [
+            {
+              "name": "nigiri",
+              "price": "300"
+            },
+            {
+              "name": "sashimi",
+              "price": "340"
+            },
+            {
+              "name": "maki",
+              "price": "450"
+            }
+          ],
+          "selectedVariety": "nigiri",
+          "quantity": 1
+        },
+        {
+          "foodName": "Ramen",
+          "varieties": [
+            {
+              "name": "shoyu",
+              "price": "300"
+            },
+            {
+              "name": "miso",
+              "price": "350"
+            },
+            {
+              "name": "tonkotsu",
+              "price": "400"
+            }
+          ],
+          "id": 12,
+          "selectedVariety": "shoyu",
+          "quantity": 1
+        },
+        {
+          "foodName": "Fajitas",
+          "varieties": [
+            {
+              "name": "chicken",
+              "price": "150"
+            },
+            {
+              "name": "beef",
+              "price": "500"
+            },
+            {
+              "name": "vegetarian",
+              "price": "200"
+            }
+          ],
+          "id": 8,
+          "selectedVariety": "chicken",
+          "quantity": 1
+        },
+        {
+          "foodName": "Tacos",
+          "varieties": [
+            {
+              "name": "beef",
+              "price": "500"
+            },
+            {
+              "name": "chicken",
+              "price": "300"
+            },
+            {
+              "name": "steak",
+              "price": "700"
+            }
+          ],
+          "id": 9,
+          "selectedVariety": "beef",
+          "quantity": 1
+        }
+      ],
+      "total": 1850,
+      "discount": 0,
+      "formatDate": "2024-02-02",
+      "id": 46
     }
   ],
   "printDetails": [
