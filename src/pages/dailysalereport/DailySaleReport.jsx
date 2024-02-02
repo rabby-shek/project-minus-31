@@ -64,7 +64,9 @@ const DailySaleReport = () => {
       </div>
       {isLoading && <div className="custom-loader"></div>}
       {todaysSaleData.length > 0 &&
-      dailySaleReportData.some((item) => item.formatDate === selectedSaleDate) ? (
+      dailySaleReportData.some(
+        (item) => item.formatDate === selectedSaleDate
+      ) ? (
         <div>
           <DailySaleReportChart />
           <table>
@@ -125,6 +127,30 @@ const DailySaleReport = () => {
               </tr>
             </tbody>
           </table>
+              {/* food item sales report  */}
+          <h2 className="daily-sale-report-header">Total Items Soled</h2>
+          <table>
+            <thead>
+              <th>Food Item</th>
+              <th>Variety</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Subtotal</th>
+            </thead>
+            <tbody>
+              {todaysSaleData.map((item) => {
+                return (
+                  <tr>
+                    <td>
+                      {item.selectedFoods.map((food) => {
+                        return <p>{food.foodName}</p>;
+                      })}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
         </div>
       ) : (
         <div style={{ textAlign: "center", marginTop: "100px" }}>
@@ -181,33 +207,6 @@ const DailySaleReport = () => {
           </td>
         </tr>
       </table> */}
-      {dailySaleReportData.length > 0 && (
-        <>
-          <h2 className="daily-sale-report-header">Total Items Soled</h2>
-          <table>
-            <thead>
-              <th>Food Item</th>
-              <th>Variety</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Subtotal</th>
-            </thead>
-            <tbody>
-              {todaysSaleData.map((item) => {
-                return (
-                  <tr>
-                    <td>
-                      {item.selectedFoods.map((food) => {
-                        return <p>{food.foodName}</p>;
-                      })}
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </>
-      )}
     </div>
   );
 };

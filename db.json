@@ -2225,6 +2225,74 @@
       "discount": 0,
       "formatDate": "2024-02-02",
       "id": 46
+    },
+    {
+      "selectedFoods": [
+        {
+          "foodName": "Ramen",
+          "varieties": [
+            {
+              "name": "shoyu",
+              "price": "300"
+            },
+            {
+              "name": "miso",
+              "price": "350"
+            },
+            {
+              "name": "tonkotsu",
+              "price": "400"
+            }
+          ],
+          "id": 12,
+          "selectedVariety": "shoyu",
+          "quantity": 1
+        },
+        {
+          "foodName": "Ramen",
+          "varieties": [
+            {
+              "name": "shoyu",
+              "price": "300"
+            },
+            {
+              "name": "miso",
+              "price": "350"
+            },
+            {
+              "name": "tonkotsu",
+              "price": "400"
+            }
+          ],
+          "id": 12,
+          "selectedVariety": "shoyu",
+          "quantity": 1
+        },
+        {
+          "foodName": "Ramen",
+          "varieties": [
+            {
+              "name": "shoyu",
+              "price": "300"
+            },
+            {
+              "name": "miso",
+              "price": "350"
+            },
+            {
+              "name": "tonkotsu",
+              "price": "400"
+            }
+          ],
+          "id": 12,
+          "selectedVariety": "shoyu",
+          "quantity": 1
+        }
+      ],
+      "total": 900,
+      "discount": 0,
+      "formatDate": "2024-02-02",
+      "id": 47
     }
   ],
   "printDetails": [
