@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from "react";
 import DailySaleReportChart from "./DailySaleReportChart";
 import useTitle from "../../hooks/useTitle";
-
+import PerItemSaleReport from "./PerItemSaleReport";
 const DailySaleReport = () => {
+  // setting up title for this
   useTitle("Daily Sale Report");
+  let dailySaleReport = 0;
+  let dailyDiscountReport = 0;
+  let countItem = 1;
   const currentDate = new Date();
   const todaysDate = currentDate.toISOString().split("T")[0];
   const [dailySaleReportData, setDailySaleReportData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedSaleDate, setSelectedSaleDate] = useState(todaysDate);
 
+  // fetch daily sales report data
   const fetchDailySaleReportData = async () => {
     try {
       const response = await fetch("http://localhost:6060/dailyFoodDetails");
@@ -25,29 +30,35 @@ const DailySaleReport = () => {
   useEffect(() => {
     fetchDailySaleReportData();
   }, []);
-
-  let dailySaleReport = 0;
-  let dailyDiscountReport = 0;
-
   const todaysSaleData = dailySaleReportData.filter(
     (items) => items.formatDate === selectedSaleDate
   );
-  console.log(todaysSaleData);
-  // const groupedData = {};
-  // todaysSaleData.forEach((item) => {
-  //   item.selectedFoods.forEach((food) => {
-  //     const key = `${food.foodName}_${food.selectedVariety}`;
-  //     if (!groupedData[key]) {
-  //       groupedData[key] = { ...food, totalQuantity: food.quantity };
-  //     } else {
-  //       groupedData[key].totalQuantity += food.quantity;
-  //     }
-  //   });
-  // });
 
-  // const groupedItems = Object.values(groupedData);
-  let countItem = 1;
-  // console.log(selectedSaleDate);
+  // finding todays soled item
+  const todaysItemNames = [];
+  todaysSaleData.forEach((item) => {
+    item.selectedFoods.forEach((food) => {
+      if (!todaysItemNames.includes(food.foodName)) {
+        todaysItemNames.push(food.foodName);
+      }
+    });
+  });
+  // get total value of soled items
+  const total = todaysSaleData.map((item) => {
+    return item.total;
+  });
+  const discount = todaysSaleData.map((item) => {
+    return item.discount;
+  });
+
+  const varieties = todaysSaleData.map((item) => {
+    return item.selectedFoods.map((food) => {
+      return food.selectedVariety;
+    });
+  });
+  // console.log(todaysSaleData);
+  console.log(varieties);
+
   return (
     <div className="daily-sale-report-container">
       <h2 className="daily-sale-report-header">Sale Report</h2>
@@ -78,18 +89,18 @@ const DailySaleReport = () => {
               </tr>
             </thead>
             <tbody>
-              {todaysSaleData.map((item) => {
+              {todaysSaleData.map((item, index) => {
                 dailySaleReport += item.total;
                 dailyDiscountReport += item.discount;
 
                 return (
-                  <tr key={item.id}>
+                  <tr key={index}>
                     <td>{countItem++}</td>
                     <td>{item.formatDate}</td>
                     <td>
-                      {item.selectedFoods.map((food) => (
+                      {item.selectedFoods.map((food, index) => (
                         <div
-                          key={food.id}
+                          key={index}
                           style={{
                             textAlign: "center",
                           }}
@@ -127,86 +138,19 @@ const DailySaleReport = () => {
               </tr>
             </tbody>
           </table>
-              {/* food item sales report  */}
-          <h2 className="daily-sale-report-header">Total Items Soled</h2>
-          <table>
-            <thead>
-              <th>Food Item</th>
-              <th>Variety</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Subtotal</th>
-            </thead>
-            <tbody>
-              {todaysSaleData.map((item) => {
-                return (
-                  <tr>
-                    <td>
-                      {item.selectedFoods.map((food) => {
-                        return <p>{food.foodName}</p>;
-                      })}
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+          {/* food item sales report  */}
+          <PerItemSaleReport
+            todaysItemNames={todaysItemNames}
+            total={total}
+            discount={discount}
+            varieties = {varieties}
+          />
         </div>
       ) : (
         <div style={{ textAlign: "center", marginTop: "100px" }}>
-          No data avaialble
+          No data available
         </div>
       )}
-
-      {/* <table>
-        <thead>
-          <th>Food Item</th>
-          <th>Variety</th>
-          <th>Price</th>
-          <th>Quantity</th>
-          <th>Subtotal</th>
-        </thead>
-        {groupedItems.map((food, index) => {
-          const selectedVarietyPrice =
-            food.varieties &&
-            food.varieties.find((v) => v.name === food.selectedVariety)?.price;
-
-          const subtotal = selectedVarietyPrice
-            ? selectedVarietyPrice * food.totalQuantity
-            : 0;
-
-          return (
-            <tr key={index}>
-              <td>{food.foodName}</td>
-              <td>{food.selectedVariety}</td>
-              <td>
-                {selectedVarietyPrice ? `${selectedVarietyPrice} TK` : ""}
-              </td>
-              <td>{food.totalQuantity}</td>
-              <td>{subtotal} TK</td>
-            </tr>
-          );
-        })}
-        <tr>
-          <td colSpan="4" style={{ textAlign: "right" }}>
-            Total :
-          </td>
-          <td>
-         
-            {groupedItems.reduce(
-              (total, food) =>
-                ((food.varieties &&
-                  food.varieties.find((v) => v.name === food.selectedVariety)
-                    ?.price) ||
-                  0) *
-                  food.totalQuantity +
-                total,
-              0
-            )}{" "}
-            TK
-          </td>
-        </tr>
-      </table> */}
     </div>
   );
 };
