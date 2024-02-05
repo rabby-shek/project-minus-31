@@ -2421,6 +2421,350 @@
       "discount": 40,
       "formatDate": "2024-02-03",
       "id": 48
+    },
+    {
+      "selectedFoods": [
+        {
+          "foodName": "Ramen",
+          "varieties": [
+            {
+              "name": "shoyu",
+              "price": "300"
+            },
+            {
+              "name": "miso",
+              "price": "350"
+            },
+            {
+              "name": "tonkotsu",
+              "price": "400"
+            }
+          ],
+          "id": 12,
+          "selectedVariety": "shoyu",
+          "quantity": 1
+        },
+        {
+          "id": 6,
+          "foodName": "Sushi",
+          "varieties": [
+            {
+              "name": "nigiri",
+              "price": "300"
+            },
+            {
+              "name": "sashimi",
+              "price": "340"
+            },
+            {
+              "name": "maki",
+              "price": "450"
+            }
+          ],
+          "selectedVariety": "sashimi",
+          "quantity": 1
+        },
+        {
+          "id": 5,
+          "foodName": "Steak",
+          "varieties": [
+            {
+              "name": "medium-rare",
+              "price": "700"
+            },
+            {
+              "name": "well-done",
+              "price": "530"
+            },
+            {
+              "name": "rare",
+              "price": "630"
+            }
+          ],
+          "selectedVariety": "medium-rare",
+          "quantity": 2
+        }
+      ],
+      "total": 2000,
+      "discount": 40,
+      "formatDate": "2024-02-05",
+      "id": 49
+    },
+    {
+      "selectedFoods": [
+        {
+          "foodName": "Pizza",
+          "varieties": [
+            {
+              "name": "pepperoni",
+              "price": "200"
+            },
+            {
+              "name": "vegetarian",
+              "price": "250"
+            },
+            {
+              "name": "cheese",
+              "price": "500"
+            }
+          ],
+          "id": 2,
+          "selectedVariety": "vegetarian",
+          "quantity": 1
+        },
+        {
+          "id": 3,
+          "foodName": "Pasta",
+          "varieties": [
+            {
+              "name": "alfredo",
+              "price": "250"
+            },
+            {
+              "name": "bolognese",
+              "price": "170"
+            },
+            {
+              "name": "pesto",
+              "price": "245"
+            }
+          ],
+          "selectedVariety": "bolognese",
+          "quantity": 1
+        },
+        {
+          "foodName": "Pizza",
+          "varieties": [
+            {
+              "name": "pepperoni",
+              "price": "200"
+            },
+            {
+              "name": "vegetarian",
+              "price": "250"
+            },
+            {
+              "name": "cheese",
+              "price": "500"
+            }
+          ],
+          "id": 2,
+          "selectedVariety": "pepperoni",
+          "quantity": 1
+        },
+        {
+          "id": 3,
+          "foodName": "Pasta",
+          "varieties": [
+            {
+              "name": "alfredo",
+              "price": "250"
+            },
+            {
+              "name": "bolognese",
+              "price": "170"
+            },
+            {
+              "name": "pesto",
+              "price": "245"
+            }
+          ],
+          "selectedVariety": "alfredo",
+          "quantity": 1
+        }
+      ],
+      "total": 800,
+      "discount": 70,
+      "formatDate": "2024-02-05",
+      "id": 50
+    },
+    {
+      "selectedFoods": [
+        {
+          "foodName": "Pizza",
+          "varieties": [
+            {
+              "name": "pepperoni",
+              "price": "200"
+            },
+            {
+              "name": "vegetarian",
+              "price": "250"
+            },
+            {
+              "name": "cheese",
+              "price": "500"
+            }
+          ],
+          "id": 2,
+          "selectedVariety": "cheese",
+          "quantity": 1
+        },
+        {
+          "foodName": "Pizza",
+          "varieties": [
+            {
+              "name": "pepperoni",
+              "price": "200"
+            },
+            {
+              "name": "vegetarian",
+              "price": "250"
+            },
+            {
+              "name": "cheese",
+              "price": "500"
+            }
+          ],
+          "id": 2,
+          "selectedVariety": "vegetarian",
+          "quantity": 1
+        }
+      ],
+      "total": 700,
+      "discount": 50,
+      "formatDate": "2024-02-05",
+      "id": 51
+    },
+    {
+      "selectedFoods": [
+        {
+          "foodName": "Pizza",
+          "varieties": [
+            {
+              "name": "pepperoni",
+              "price": "200"
+            },
+            {
+              "name": "vegetarian",
+              "price": "250"
+            },
+            {
+              "name": "cheese",
+              "price": "500"
+            }
+          ],
+          "id": 2,
+          "selectedVariety": "pepperoni",
+          "quantity": 1
+        }
+      ],
+      "total": 200,
+      "discount": 0,
+      "formatDate": "2024-02-05",
+      "id": 52
+    },
+    {
+      "selectedFoods": [
+        {
+          "foodName": "Ramen",
+          "varieties": [
+            {
+              "name": "shoyu",
+              "price": "300"
+            },
+            {
+              "name": "miso",
+              "price": "350"
+            },
+            {
+              "name": "tonkotsu",
+              "price": "400"
+            }
+          ],
+          "id": 12,
+          "selectedVariety": "shoyu",
+          "quantity": 1
+        }
+      ],
+      "total": 300,
+      "discount": 0,
+      "formatDate": "2024-02-05",
+      "id": 53
+    },
+    {
+      "selectedFoods": [
+        {
+          "foodName": "Ramen",
+          "varieties": [
+            {
+              "name": "shoyu",
+              "price": "300"
+            },
+            {
+              "name": "miso",
+              "price": "350"
+            },
+            {
+              "name": "tonkotsu",
+              "price": "400"
+            }
+          ],
+          "id": 12,
+          "selectedVariety": "miso",
+          "quantity": 1
+        }
+      ],
+      "total": 300,
+      "discount": 50,
+      "formatDate": "2024-02-05",
+      "id": 54
+    },
+    {
+      "selectedFoods": [
+        {
+          "foodName": "Ramen",
+          "varieties": [
+            {
+              "name": "shoyu",
+              "price": "300"
+            },
+            {
+              "name": "miso",
+              "price": "350"
+            },
+            {
+              "name": "tonkotsu",
+              "price": "400"
+            }
+          ],
+          "id": 12,
+          "selectedVariety": "tonkotsu",
+          "quantity": 2
+        }
+      ],
+      "total": 800,
+      "discount": 0,
+      "formatDate": "2024-02-05",
+      "id": 55
+    },
+    {
+      "selectedFoods": [
+        {
+          "id": 3,
+          "foodName": "Pasta",
+          "varieties": [
+            {
+              "name": "alfredo",
+              "price": "250"
+            },
+            {
+              "name": "bolognese",
+              "price": "170"
+            },
+            {
+              "name": "pesto",
+              "price": "245"
+            }
+          ],
+          "selectedVariety": "alfredo",
+          "quantity": 1
+        }
+      ],
+      "total": 250,
+      "discount": 0,
+      "formatDate": "2024-02-05",
+      "id": 56
     }
   ],
   "printDetails": [

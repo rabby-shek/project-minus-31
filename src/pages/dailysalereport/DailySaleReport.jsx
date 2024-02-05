@@ -34,34 +34,14 @@ const DailySaleReport = () => {
     (items) => items.formatDate === selectedSaleDate
   );
 
-  // finding todays soled item
-  const todaysItemNames = [];
-  todaysSaleData.forEach((item) => {
-    item.selectedFoods.forEach((food) => {
-      if (!todaysItemNames.includes(food.foodName)) {
-        todaysItemNames.push(food.foodName);
-      }
-    });
-  });
   // get total value of soled items
-  const total = todaysSaleData.map((item) => {
-    return item.total;
-  });
-  const discount = todaysSaleData.map((item) => {
-    return item.discount;
-  });
 
-  const varieties = todaysSaleData.map((item) => {
-    return item.selectedFoods.map((food) => {
-      return food.selectedVariety;
-    });
-  });
   // console.log(todaysSaleData);
-  console.log(varieties);
+  //  console.log(todaysSaleData);
 
   return (
     <div className="daily-sale-report-container">
-      <h2 className="daily-sale-report-header">Sale Report</h2>
+      <h2 className="daily-sale-report-header">Sales Report</h2>
       <div>
         <span>Select a Date : </span>
         <input
@@ -140,10 +120,7 @@ const DailySaleReport = () => {
           </table>
           {/* food item sales report  */}
           <PerItemSaleReport
-            todaysItemNames={todaysItemNames}
-            total={total}
-            discount={discount}
-            varieties = {varieties}
+            todaysSaleData={todaysSaleData}
           />
         </div>
       ) : (
