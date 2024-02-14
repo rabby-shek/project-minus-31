@@ -139,3 +139,26 @@ const PerItemSaleReport = ({ todaysSaleData }) => {
 };
 
 export default PerItemSaleReport;
+// import React from 'react'
+
+// const PerItemSaleReport = ({ todaysSaleData }) => {
+//   //  console.log(todaysSaleData);
+
+//   return (
+//     <div>
+//       <h1 style={{textAlign:"center",margin:"20px 0px"}}>Todays Soled Items</h1>
+//       <table>
+//           <thead>
+//             <th>
+//             </th>
+//             <th>
+
+//             </th>
+//           </thead>
+//       </table>
+//     </div>
+//   )
+// }
+
+// export default PerItemSaleReport
+
